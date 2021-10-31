@@ -11,7 +11,7 @@ class DarkTheme {
   static const gray3 = Color(0xffD1D1D6);
   static const gray4 = Color(0xffE5E5EA);
   static const gray5 = Color(0xffEFEFF4);
-  static const light = Color(0xffFFFFFF);
+  static const white = Colors.white;
   static const adding = Color(0xff4CD964);
   static const destructive = Color(0xffFF3B30);
   static const dark = Color(0xff1D1D26);

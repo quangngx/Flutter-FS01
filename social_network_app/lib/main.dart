@@ -21,6 +21,10 @@ class MyApp extends StatelessWidget {
         ),
         primaryColor: DarkTheme.yellow,
         scaffoldBackgroundColor: DarkTheme.darkBackground,
+        textTheme: Theme.of(context).textTheme.apply(
+          bodyColor: DarkTheme.white,
+          displayColor: DarkTheme.white
+        )
       ),
       debugShowCheckedModeBanner: false,
       title: 'Social Network App',

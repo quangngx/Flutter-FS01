@@ -3,5 +3,6 @@ class Routes {
 
   static const String commonWidgetScreen = 'CommonWidgetScreen';
 
-
+  static const String componentsScreen = 'ComponentsScreen';
+  static const String screensList = 'ScreensList';
 }
