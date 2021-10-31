@@ -1,42 +1,44 @@
 import 'package:flutter/material.dart';
 import 'package:social_network_app/config/themes/themes.dart';
 
-class GradientButton {
+class GradientPinkButton extends StatelessWidget {
+  final double height;
+  final double width;
+  final double radius;
+  final String content;
+  final VoidCallback onTap;
 
-  // static final gradientButtonRadius22 = Container(
-  //   height: size.height/15,
-  //   decoration: BoxDecoration(
-  //       borderRadius: BorderRadius.circular(20),
-  //       gradient: const LinearGradient(
-  //         begin: Alignment.bottomLeft,
-  //         end: Alignment.topRight,
-  //         colors: [
-  //           DarkTheme.darkerPink,
-  //           DarkTheme.lighterPink
-  //         ],
-  //       )
-  //   ),
-  // );
+  const GradientPinkButton(
+      {Key? key,
+      required this.content,
+      required this.height,
+      required this.width,
+      required this.radius,
+      required this.onTap})
+      : super(key: key);
 
-   Widget gradientPinkButton (double height, double radius) {
-    return Container(
-          height: height,
-          decoration: _pinkGradientWithRadius(radius)
-        );
-  }
-
-  BoxDecoration _pinkGradientWithRadius(double radius) {
-    return BoxDecoration(
-        borderRadius: BorderRadius.circular(radius),
-        gradient: const LinearGradient(
-          begin: Alignment.bottomLeft,
-          end: Alignment.topRight,
-          colors: [
-            DarkTheme.darkerPink,
-            DarkTheme.lighterPink
-          ],
-        )
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        alignment: Alignment.center,
+        height: height,
+        width: width,
+        decoration: pinkGradientWithRadius(radius),
+        child: Text(content),
+      ),
     );
   }
+}
 
+BoxDecoration pinkGradientWithRadius(double radius) {
+  return BoxDecoration(
+    borderRadius: BorderRadius.circular(radius),
+    gradient: const LinearGradient(
+      begin: Alignment.bottomLeft,
+      end: Alignment.topRight,
+      colors: [DarkTheme.darkerPink, DarkTheme.lighterPink],
+    ),
+  );
 }
