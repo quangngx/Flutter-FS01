@@ -75,11 +75,40 @@ class ComponentsScreen extends StatelessWidget {
             session(Column(
               children: [
                 sessionTitle('Inbox Item'),
-                ClipOval(
-                  child: Container(
-                    height: 64,
-                    width: 64,
-                    color: DarkTheme.orange,
+                Container(
+                  height: size.height / 8,
+                  color: DarkTheme.darkBackground,
+                  child: Row(
+                    children: [
+                      const CustomCircleAvatar(
+                          messageCounter: 9, isActive: true),
+                      const SizedBox(
+                        width: AppConstants.regularPadding,
+                      ),
+                      Expanded(
+                          child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Row(
+                            children: [
+                              Expanded(
+                                  child: Container(
+                                alignment: Alignment.centerLeft,
+                                child: const Text('User Name'),
+                              )),
+                              Container(
+                                alignment: Alignment.centerLeft,
+                                child: const Text('09:00PM'),
+                              ),
+                            ],
+                          ),
+                          Container(
+                            alignment: Alignment.topLeft,
+                            child: const Text('Message Content'),
+                          ),
+                        ],
+                      ))
+                    ],
                   ),
                 )
               ],
