@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:social_network_app/config/themes/text_theme.dart';
 import 'package:social_network_app/config/themes/themes.dart';
 import 'package:social_network_app/constants/app_constants.dart';
 import 'package:social_network_app/widgets/stateful/inbox_dot.dart';
 import 'package:social_network_app/widgets/stateless/circle_avatar.dart';
+import 'package:social_network_app/widgets/stateless/inbox_item.dart';
 import 'package:social_network_app/widgets/stateless/status_dot.dart';
 
 class ComponentsScreen extends StatelessWidget {
@@ -31,7 +33,9 @@ class ComponentsScreen extends StatelessWidget {
     Widget sessionTitle(String content) {
       return Padding(
         padding: const EdgeInsets.only(bottom: AppConstants.regularPadding),
-        child: Text(content),
+        child: Text(content,style: CustomTextStyle.heading2Bold.copyWith(
+          color: DarkTheme.lighterPink
+        ),),
       );
     }
 
@@ -44,6 +48,35 @@ class ComponentsScreen extends StatelessWidget {
             const EdgeInsets.symmetric(horizontal: AppConstants.regularPadding),
         child: Column(
           children: [
+            session(Column(
+              children: [
+                sessionTitle('All Typo'),
+                const Text(
+                  'Heading 1',
+                  style: CustomTextStyle.heading1,
+                ),
+                const Text(
+                  'Heading 1 Bold',
+                  style: CustomTextStyle.heading1Bold,
+                ),
+                const Text(
+                  'Heading 2',
+                  style: CustomTextStyle.heading2,
+                ),
+                const Text(
+                  'Heading 2',
+                  style: CustomTextStyle.heading2Bold,
+                ),
+                const Text(
+                  'Heading 3',
+                  style: CustomTextStyle.heading3,
+                ),
+                const Text(
+                  'Heading 3',
+                  style: CustomTextStyle.heading3Bold,
+                ),
+              ],
+            )),
             session(Column(
               children: [
                 sessionTitle('Dots'),
@@ -75,42 +108,7 @@ class ComponentsScreen extends StatelessWidget {
             session(Column(
               children: [
                 sessionTitle('Inbox Item'),
-                Container(
-                  height: size.height / 8,
-                  color: DarkTheme.darkBackground,
-                  child: Row(
-                    children: [
-                      const CustomCircleAvatar(
-                          messageCounter: 9, isActive: true),
-                      const SizedBox(
-                        width: AppConstants.regularPadding,
-                      ),
-                      Expanded(
-                          child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Row(
-                            children: [
-                              Expanded(
-                                  child: Container(
-                                alignment: Alignment.centerLeft,
-                                child: const Text('User Name'),
-                              )),
-                              Container(
-                                alignment: Alignment.centerLeft,
-                                child: const Text('09:00PM'),
-                              ),
-                            ],
-                          ),
-                          Container(
-                            alignment: Alignment.topLeft,
-                            child: const Text('Message Content'),
-                          ),
-                        ],
-                      ))
-                    ],
-                  ),
-                )
+                InboxItem(size: size)
               ],
             )),
           ],
@@ -119,3 +117,4 @@ class ComponentsScreen extends StatelessWidget {
     );
   }
 }
+

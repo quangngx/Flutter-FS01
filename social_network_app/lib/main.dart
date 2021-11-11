@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:social_network_app/config/themes/themes.dart';
 import 'config/routes/routes.dart';
 import 'config/routes/router.dart' as router;
@@ -21,9 +22,11 @@ class MyApp extends StatelessWidget {
         ),
         primaryColor: DarkTheme.yellow,
         scaffoldBackgroundColor: DarkTheme.darkBackground,
-        textTheme: Theme.of(context).textTheme.apply(
-          bodyColor: DarkTheme.white,
-          displayColor: DarkTheme.white
+        textTheme: GoogleFonts.nunitoTextTheme(
+          Theme.of(context).textTheme.apply(
+            bodyColor: DarkTheme.white,
+            displayColor: DarkTheme.white
+          )
         )
       ),
       debugShowCheckedModeBanner: false,
