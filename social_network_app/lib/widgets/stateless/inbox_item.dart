@@ -15,7 +15,9 @@ class InboxItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: size.height / 8,
-      color: DarkTheme.darkBackground,
+      decoration: BoxDecoration(
+          color: DarkTheme.darkBackground,
+          borderRadius: BorderRadius.circular(12)),
       padding: const EdgeInsets.symmetric(
           vertical: AppConstants.regularPadding,
           horizontal: AppConstants.regularPadding),
