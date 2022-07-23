@@ -29,6 +29,8 @@ dependencies:
   bloc: ^8.0.3
   cupertino_icons: ^1.0.2
   equatable: ^2.0.3
+  firebase_auth: ^3.5.0
+  firebase_core: ^1.20.0
   flutter:
     sdk: flutter
   flutter_bloc: ^8.0.1
@@ -41,8 +43,7 @@ dependencies:
     path: packages/authentication_repository
   user_repository:
     path: packages/user_repository
-  firebase_core: ^1.20.0
-  firebase_auth: ^3.5.0
+  
 
 
 dev_dependencies:
