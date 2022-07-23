@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:social_network_app/config/themes/themes.dart';
+import 'package:social_network_app/config/themes/colorful.dart';
 import 'package:social_network_app/constants/app_constants.dart';
 
 class StatusDot extends StatelessWidget {

@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:social_network_app/config/themes/text_theme.dart';
-import 'package:social_network_app/config/themes/themes.dart';
 import 'package:social_network_app/constants/app_constants.dart';
-import 'package:social_network_app/widgets/stateful/inbox_dot.dart';
-import 'package:social_network_app/widgets/stateless/circle_avatar.dart';
-import 'package:social_network_app/widgets/stateless/inbox_item.dart';
-import 'package:social_network_app/widgets/stateless/status_dot.dart';
+import '../../../config/themes/themes.dart';
+import '../../../widgets/stateful/stful.dart';
+import '../../../widgets/stateless/stless.dart';
 
 class ComponentsScreen extends StatelessWidget {
   const ComponentsScreen({Key? key}) : super(key: key);
@@ -33,9 +30,10 @@ class ComponentsScreen extends StatelessWidget {
     Widget sessionTitle(String content) {
       return Padding(
         padding: const EdgeInsets.only(bottom: AppConstants.regularPadding),
-        child: Text(content,style: CustomTextStyle.heading2Bold.copyWith(
-          color: DarkTheme.lighterPink
-        ),),
+        child: Text(
+          content,
+          style: TypoStyle.heading2Bold.copyWith(color: DarkTheme.lighterPink),
+        ),
       );
     }
 
@@ -53,27 +51,27 @@ class ComponentsScreen extends StatelessWidget {
                 sessionTitle('All Typo'),
                 const Text(
                   'Heading 1',
-                  style: CustomTextStyle.heading1,
+                  style: TypoStyle.heading1,
                 ),
                 const Text(
                   'Heading 1 Bold',
-                  style: CustomTextStyle.heading1Bold,
+                  style: TypoStyle.heading1Bold,
                 ),
                 const Text(
                   'Heading 2',
-                  style: CustomTextStyle.heading2,
+                  style: TypoStyle.heading2,
                 ),
                 const Text(
                   'Heading 2',
-                  style: CustomTextStyle.heading2Bold,
+                  style: TypoStyle.heading2Bold,
                 ),
                 const Text(
                   'Heading 3',
-                  style: CustomTextStyle.heading3,
+                  style: TypoStyle.heading3,
                 ),
                 const Text(
                   'Heading 3',
-                  style: CustomTextStyle.heading3Bold,
+                  style: TypoStyle.heading3Bold,
                 ),
               ],
             )),
@@ -108,7 +106,10 @@ class ComponentsScreen extends StatelessWidget {
             session(Column(
               children: [
                 sessionTitle('Inbox Item'),
-                InboxItem(size: size)
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: InboxItem(size: size),
+                )
               ],
             )),
           ],
@@ -117,4 +118,3 @@ class ComponentsScreen extends StatelessWidget {
     );
   }
 }
-

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-class CustomTextStyle {
+class TypoStyle {
   static const TextStyle heading1 = TextStyle(
     fontSize: 20,
     fontWeight: FontWeight.w400,
@@ -18,7 +18,6 @@ class CustomTextStyle {
     fontSize: 16,
     fontWeight: FontWeight.w600,
   );
-
 
   static const TextStyle heading3 = TextStyle(
     fontSize: 14,

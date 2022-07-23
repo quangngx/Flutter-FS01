@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:social_network_app/config/themes/themes.dart';
+import 'package:social_network_app/config/themes/colorful.dart';
 import 'config/routes/routes.dart';
 import 'config/routes/router.dart' as router;
 

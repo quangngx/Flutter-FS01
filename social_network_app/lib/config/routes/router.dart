@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:social_network_app/modules/common_widget/screens/common_widget_screen.dart';
 import 'package:social_network_app/modules/common_widget/screens/components_screen.dart';

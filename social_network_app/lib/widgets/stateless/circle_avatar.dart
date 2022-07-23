@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:social_network_app/config/themes/themes.dart';
+import 'package:social_network_app/config/themes/colorful.dart';
 import 'package:social_network_app/widgets/stateful/inbox_dot.dart';
 import 'package:social_network_app/widgets/stateless/status_dot.dart';
 

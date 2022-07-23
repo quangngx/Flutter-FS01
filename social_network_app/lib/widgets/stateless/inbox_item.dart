@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:social_network_app/config/themes/text_theme.dart';
-import 'package:social_network_app/config/themes/themes.dart';
 import 'package:social_network_app/constants/app_constants.dart';
-
+import '../../config/themes/themes.dart';
 import 'circle_avatar.dart';
 
 class InboxItem extends StatelessWidget {
@@ -18,11 +16,12 @@ class InboxItem extends StatelessWidget {
     return Container(
       height: size.height / 8,
       color: DarkTheme.darkBackground,
-      padding: const EdgeInsets.symmetric(vertical: AppConstants.regularPadding),
+      padding: const EdgeInsets.symmetric(
+          vertical: AppConstants.regularPadding,
+          horizontal: AppConstants.regularPadding),
       child: Row(
         children: [
-          const CustomCircleAvatar(
-              messageCounter: 9, isActive: true),
+          const CustomCircleAvatar(messageCounter: 9, isActive: true),
           const SizedBox(
             width: AppConstants.regularPadding,
           ),
@@ -35,19 +34,27 @@ class InboxItem extends StatelessWidget {
                   Expanded(
                       child: Container(
                     alignment: Alignment.centerLeft,
-                    child: const Text('User Name',style: CustomTextStyle.heading1Bold,),
+                    child: const Text(
+                      'User Name',
+                      style: TypoStyle.heading1Bold,
+                    ),
                   )),
                   Container(
                     alignment: Alignment.centerLeft,
-                    child: Text('09:00PM',style: CustomTextStyle.heading3.copyWith(
-                      color: DarkTheme.gray1
-                    ),),
+                    child: Text(
+                      '09:00PM',
+                      style:
+                          TypoStyle.heading3.copyWith(color: DarkTheme.gray1),
+                    ),
                   ),
                 ],
               ),
               Container(
                 alignment: Alignment.topLeft,
-                child: const Text('Message Content',style: CustomTextStyle.heading2,),
+                child: const Text(
+                  'Message Content',
+                  style: TypoStyle.heading2,
+                ),
               ),
             ],
           ))
