@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:social_network_app/constants/app_constants.dart';
+
+
 import '../../../config/themes/themes.dart';
+import '../../../constants/constants.dart';
 import '../../../widgets/stateful/stful.dart';
 import '../../../widgets/stateless/stless.dart';
 

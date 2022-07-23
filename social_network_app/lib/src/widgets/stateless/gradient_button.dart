@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:social_network_app/config/themes/colorful.dart';
+
+import '../../config/configs.dart';
+
 
 class GradientPinkButton extends StatelessWidget {
   final double height;

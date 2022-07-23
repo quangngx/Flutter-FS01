@@ -1,19 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:social_network_app/config/themes/colorful.dart';
-import 'package:social_network_app/widgets/stateful/inbox_dot.dart';
-import 'package:social_network_app/widgets/stateless/status_dot.dart';
+import 'package:social_network_app/src/widgets/stateless/stless.dart';
+
+import '../../config/configs.dart';
+import '../stateful/stful.dart';
 
 class CustomCircleAvatar extends StatelessWidget {
   final int? messageCounter;
   final bool? isActive;
 
-  const CustomCircleAvatar({Key? key, required this.messageCounter, required this.isActive})
+  const CustomCircleAvatar(
+      {Key? key, required this.messageCounter, required this.isActive})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     Widget _getChild() {
-      if (messageCounter == null && isActive == null) { // CASE NORMAL AVATAR
+      if (messageCounter == null && isActive == null) {
+        // CASE NORMAL AVATAR
         return ClipOval(
           child: Container(
             height: 64,
@@ -21,7 +24,8 @@ class CustomCircleAvatar extends StatelessWidget {
             color: DarkTheme.orange,
           ),
         );
-      } else if (messageCounter != null) { // CASE RED
+      } else if (messageCounter != null) {
+        // CASE RED
         return SizedBox(
           height: 64,
           width: 64,
@@ -40,7 +44,8 @@ class CustomCircleAvatar extends StatelessWidget {
             ],
           ),
         );
-      } else if (isActive == true) { //CASE GREEN
+      } else if (isActive == true) {
+        //CASE GREEN
         return SizedBox(
           height: 64,
           width: 64,

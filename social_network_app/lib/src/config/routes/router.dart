@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:social_network_app/modules/common_widget/screens/common_widget_screen.dart';
-import 'package:social_network_app/modules/common_widget/screens/components_screen.dart';
-import 'package:social_network_app/modules/common_widget/screens/screens_list.dart';
-import 'package:social_network_app/modules/message/screens/message_list_screen.dart';
+import '../../modules/common_widget/screens/common_widget_screen.dart';
+import '../../modules/common_widget/screens/components_screen.dart';
+import '../../modules/common_widget/screens/screens_list.dart';
+import '../../modules/message/screens/message_list_screen.dart';
 
 class Router {
   static Route<dynamic>? generateRoute(RouteSettings settings) {

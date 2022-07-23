@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:social_network_app/constants/app_constants.dart';
+
 import '../../config/themes/themes.dart';
+import '../../constants/constants.dart';
 import 'circle_avatar.dart';
 
 class InboxItem extends StatelessWidget {

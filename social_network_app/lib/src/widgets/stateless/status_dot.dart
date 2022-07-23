@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:social_network_app/config/themes/colorful.dart';
-import 'package:social_network_app/constants/app_constants.dart';
+
+import '../../config/configs.dart';
+import '../../constants/constants.dart';
+
+
+
 
 class StatusDot extends StatelessWidget {
   const StatusDot({Key? key}) : super(key: key);

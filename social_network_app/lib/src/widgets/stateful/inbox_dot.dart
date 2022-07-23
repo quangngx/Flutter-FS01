@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:social_network_app/config/themes/colorful.dart';
-import 'package:social_network_app/constants/app_constants.dart';
-import 'package:social_network_app/widgets/stateless/gradient_button.dart';
+
+import '../../config/configs.dart';
+import '../../constants/constants.dart';
+import '../stateless/stless.dart';
+
 
 class InboxDot extends StatelessWidget {
   final int messageCounter;

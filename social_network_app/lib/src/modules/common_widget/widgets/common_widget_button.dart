@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:social_network_app/constants/app_constants.dart';
-import 'package:social_network_app/widgets/stateless/gradient_button.dart';
+
+import '../../../constants/constants.dart';
+import '../../../widgets/stateless/stless.dart';
+
 
 class CommonWidgetButton extends StatelessWidget {
 

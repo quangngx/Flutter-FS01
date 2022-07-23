@@ -1,38 +1,11 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:social_network_app/config/themes/colorful.dart';
-import 'config/routes/routes.dart';
-import 'config/routes/router.dart' as router;
 
-void main() {
-  runApp(const MyApp());
-}
+import 'app.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        appBarTheme:const AppBarTheme(
-          backgroundColor: DarkTheme.darkBackground,
-          elevation: 0
-        ),
-        primaryColor: DarkTheme.yellow,
-        scaffoldBackgroundColor: DarkTheme.darkBackground,
-        textTheme: GoogleFonts.nunitoTextTheme(
-          Theme.of(context).textTheme.apply(
-            bodyColor: DarkTheme.white,
-            displayColor: DarkTheme.white
-          )
-        )
-      ),
-      debugShowCheckedModeBanner: false,
-      title: 'Social Network App',
-      initialRoute: Routes.commonWidgetScreen,
-      onGenerateRoute: router.Router.generateRoute,
-    );
-  }
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(const App());
 }
