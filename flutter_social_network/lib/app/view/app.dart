@@ -7,12 +7,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_social_network/counter/counter.dart';
+import 'package:flutter_social_network/configs/router.dart';
 import 'package:flutter_social_network/l10n/l10n.dart';
 import 'package:flutter_social_network/theme/theme.dart';
 
 class App extends StatelessWidget {
-  const App({super.key});
+  const App({super.key, required this.appRouter});
+  final AppRouter appRouter;
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +25,8 @@ class App extends StatelessWidget {
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
       ],
+      onGenerateRoute: appRouter.onGenerateRoute,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const CounterPage(),
     );
   }
 }
