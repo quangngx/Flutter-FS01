@@ -6,11 +6,11 @@
 // https://opensource.org/licenses/MIT.
 
 import 'dart:io';
-
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_social_network/app/app.dart';
 import 'package:flutter_social_network/bootstrap.dart';
+import 'package:flutter_social_network/configs/router.dart';
 import 'package:flutter_social_network/firebase_options.dart';
 
 Future<void> main() async {
@@ -22,6 +22,9 @@ Future<void> main() async {
   } else {
     await Firebase.initializeApp();
   }
-  await Firebase.initializeApp();
-  await bootstrap(() => const App());
+  await bootstrap(
+    () => App(
+      appRouter: AppRouter(),
+    ),
+  );
 }

@@ -7,7 +7,12 @@
 
 import 'package:flutter_social_network/app/app.dart';
 import 'package:flutter_social_network/bootstrap.dart';
+import 'package:flutter_social_network/configs/router.dart';
 
 void main() {
-  bootstrap(() => const App());
+  bootstrap(
+    () => App(
+      appRouter: AppRouter(),
+    ),
+  );
 }
