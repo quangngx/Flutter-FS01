@@ -24,6 +24,11 @@ class User extends Equatable {
   /// Empty user which represents an unauthenticated user.
   static const empty = User(id: '');
 
+  /// fake user for cache
+  static const fakeUser = User(
+    id: 'idFake',
+  );
+
   /// Convinience getter to determine whether the current user is empty
   bool get isEmpty => this == User.empty;
 

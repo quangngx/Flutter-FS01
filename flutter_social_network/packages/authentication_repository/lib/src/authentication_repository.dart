@@ -1,5 +1,6 @@
 import 'package:authentication_repository/authentication_repository.dart';
 import 'package:authentication_repository/src/models/models.dart';
+import 'package:cache/cache.dart';
 import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 import 'package:google_sign_in/google_sign_in.dart';
 
@@ -27,19 +28,26 @@ class LogOutFailure implements Exception {}
 class AuthenticationRepository {
   /// {@micro authentication_repository}
   AuthenticationRepository({
+    CacheClient? cache,
     firebase_auth.FirebaseAuth? firebaseAuth,
     GoogleSignIn? googleSignIn,
-  })  : _firebaseAuth = firebaseAuth ?? firebase_auth.FirebaseAuth.instance,
+  })  : _cache = cache ?? CacheClient(),
+        _firebaseAuth = firebaseAuth ?? firebase_auth.FirebaseAuth.instance,
         _googleSignIn = googleSignIn ?? GoogleSignIn.standard();
 
+  final CacheClient _cache;
   final firebase_auth.FirebaseAuth _firebaseAuth;
   final GoogleSignIn _googleSignIn;
+
+  ///
+  static const userCacheKey = '__user_cache_key__';
 
   /// Stream of User which will emit current user when
   /// the authentication state change
   Stream<User> get user {
     return _firebaseAuth.authStateChanges().map((firebaseUser) {
       final user = firebaseUser == null ? User.empty : firebaseUser.toUser;
+      _cache.write(key: userCacheKey, value: user);
       return user;
     });
   }
@@ -72,8 +80,10 @@ class AuthenticationRepository {
   }
 
   /// Log in with Email and password
-  Future<void> logInWithEmailAndPassword(
-      {required String email, required String password}) async {
+  Future<void> logInWithEmailAndPassword({
+    required String email,
+    required String password,
+  }) async {
     try {
       await _firebaseAuth.signInWithEmailAndPassword(
         email: email,
@@ -94,6 +104,17 @@ class AuthenticationRepository {
     } on Exception {
       throw LogOutFailure();
     }
+  }
+
+  ///
+  User get currentUser {
+    return _cache.read<User>(key: userCacheKey) ?? User.empty;
+  }
+
+  /// check if signed in
+  Future<bool> isSignedIn() async {
+    final currentUser = _firebaseAuth.currentUser;
+    return currentUser != null;
   }
 }
 
