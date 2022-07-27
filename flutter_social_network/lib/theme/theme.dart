@@ -5,7 +5,9 @@ class AppTheme {
   static ThemeData get light {
     return ThemeData(
       appBarTheme: const AppBarTheme(
-          color: AppColor.neutralLight09, shadowColor: Colors.transparent),
+        color: AppColor.neutralLight09,
+        shadowColor: Colors.transparent,
+      ),
       colorScheme: ColorScheme.fromSwatch(
         accentColor: const Color(0xFF13B9FF),
       ),
@@ -20,7 +22,8 @@ class AppTheme {
   static ThemeData get dark {
     return ThemeData(
       appBarTheme: const AppBarTheme(
-        color: Color(0xFF13B9FF),
+        color: AppColor.neutralDark09,
+        shadowColor: Colors.transparent,
       ),
       colorScheme: ColorScheme.fromSwatch(
         brightness: Brightness.dark,
