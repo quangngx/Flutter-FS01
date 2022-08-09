@@ -2,20 +2,15 @@ import 'package:flutter/material.dart';
 
 import '../../config/configs.dart';
 
-
-class GradientPinkButton extends StatelessWidget {
-  final double height;
-  final double width;
-  final double radius;
+class PrimaryButton extends StatelessWidget {
+  final Size size;
   final String content;
   final VoidCallback onTap;
 
-  const GradientPinkButton(
+  const PrimaryButton(
       {Key? key,
       required this.content,
-      required this.height,
-      required this.width,
-      required this.radius,
+      required this.size,
       required this.onTap})
       : super(key: key);
 
@@ -25,18 +20,18 @@ class GradientPinkButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         alignment: Alignment.center,
-        height: height,
-        width: width,
-        decoration: pinkGradientWithRadius(radius),
+        height: size.height / 16,
+        width: size.width,
+        decoration: pinkGradientWithRadius(),
         child: Text(content),
       ),
     );
   }
 }
 
-BoxDecoration pinkGradientWithRadius(double radius) {
+BoxDecoration pinkGradientWithRadius() {
   return BoxDecoration(
-    borderRadius: BorderRadius.circular(radius),
+    borderRadius: BorderRadius.circular(22),
     gradient: const LinearGradient(
       begin: Alignment.bottomLeft,
       end: Alignment.topRight,

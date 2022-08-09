@@ -11,22 +11,23 @@ class ScreensList extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
 
-    final List<String> screens = [
-      Routes.messageScreen
-    ];
-
     return Scaffold(
       appBar: AppBar(
-        title:  const Text('Screens List'),
+        title: const Text('Screens List'),
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: AppConstants.regularPadding),
+          padding: const EdgeInsets.symmetric(
+              horizontal: AppConstants.regularPadding),
           child: Column(
-            children: screens.map((e) => Builder(builder: (context) => CommonWidgetButton(content: e, onTap: () {
-              Navigator.pushNamed(context, e);
-            }, size: size))).toList()
-          ),
+              children: Routes.screens
+                  .map((e) => CommonWidgetButton(
+                      content: e,
+                      onTap: () {
+                        Navigator.pushNamed(context, e);
+                      },
+                      size: size))
+                  .toList()),
         ),
       ),
     );

@@ -6,6 +6,11 @@ class Routes {
   static const String componentsScreen = 'ComponentsScreen';
   static const String screensList = 'ScreensList';
 
+  static const String loginScreen = 'LoginScreen';
   static const String messageScreen = 'MessageScreen';
-  
+
+  static final List<String> screens = [
+    loginScreen,
+    messageScreen
+  ];
 }

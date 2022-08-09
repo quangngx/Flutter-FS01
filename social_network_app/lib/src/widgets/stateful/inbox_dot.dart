@@ -20,7 +20,7 @@ class InboxDot extends StatelessWidget {
       child: Container(
           alignment: Alignment.center,
           margin: const EdgeInsets.all(AppConstants.dotSized / 10),
-          decoration: pinkGradientWithRadius(50),
+          decoration: pinkGradientWithRadius(),
           child: Text(
             _getMessageCounter(),
             style: const TextStyle(fontSize: 10),
